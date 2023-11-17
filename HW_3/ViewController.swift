@@ -10,15 +10,14 @@ import UIKit
 final class ViewController: UIViewController {
 
     @IBOutlet var colorfulLabel: UIView!
-
-    @IBOutlet var redSlider: UISlider!
-    @IBOutlet var blueSlider: UISlider!
-    @IBOutlet var greenSlider: UISlider!
-    
     
     @IBOutlet var redValueLabel: UILabel!
     @IBOutlet var greenValueLabel: UILabel!
     @IBOutlet var blueValueLabel: UILabel!
+
+    @IBOutlet var redSlider: UISlider!
+    @IBOutlet var blueSlider: UISlider!
+    @IBOutlet var greenSlider: UISlider!
     
     override func viewDidLoad() {
         super.viewDidLoad()
