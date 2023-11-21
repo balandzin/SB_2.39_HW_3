@@ -8,13 +8,13 @@
 import UIKit
 
 final class ViewController: UIViewController {
-
+    
     @IBOutlet var colorfulLabel: UIView!
     
     @IBOutlet var redValueLabel: UILabel!
     @IBOutlet var greenValueLabel: UILabel!
     @IBOutlet var blueValueLabel: UILabel!
-
+    
     @IBOutlet var redSlider: UISlider!
     @IBOutlet var blueSlider: UISlider!
     @IBOutlet var greenSlider: UISlider!
@@ -26,21 +26,21 @@ final class ViewController: UIViewController {
         
         changeColor()
         
-        redValueLabel.text = String(format: "%.2f", redSlider.value)
-        greenValueLabel.text = String(format: "%.2f", greenSlider.value)
-        blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+        redValueLabel.text = string(from: redSlider)
+        greenValueLabel.text = string(from: greenSlider)
+        blueValueLabel.text = string(from: blueSlider)
     }
-
+    
     @IBAction func sliderAction(_ sender: UISlider) {
         changeColor()
-
+        
         switch sender {
         case redSlider:
-            redValueLabel.text = String(format: "%.2f", redSlider.value)
+            redValueLabel.text = string(from: redSlider)
         case greenSlider:
-            greenValueLabel.text = String(format: "%.2f", greenSlider.value)
+            greenValueLabel.text = string(from: greenSlider)
         default:
-            blueValueLabel.text = String(format: "%.2f", blueSlider.value)
+            blueValueLabel.text = string(from: blueSlider)
         }
     }
     
@@ -51,6 +51,10 @@ final class ViewController: UIViewController {
             blue: CGFloat(blueSlider.value),
             alpha: 1
         )
+    }
+    
+    private func string(from slider: UISlider) -> String {
+        String(format: "%.2f", slider.value)
     }
 }
 
